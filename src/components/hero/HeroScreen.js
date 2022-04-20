@@ -1,5 +1,7 @@
 export const HeroScreen = () => {
   return (
-    <div>HeroScreen</div>
+    <div>
+      HeroScreen
+    </div>
   )
 }
