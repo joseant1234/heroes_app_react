@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useParams, Navigate, useNavigate } from "react-router-dom"
 import { getHeroById } from "../../selectors/getHeroById";
 
@@ -5,7 +6,12 @@ export const HeroScreen = () => {
   const { heroId } = useParams();
   const navigate = useNavigate();
 
-  const hero = getHeroById(heroId);
+  // el useMemo memoriza el valor de acuerdo a una dependencia y si esa dependencia cambia vuelve a memorizar
+  const hero = useMemo(() => {
+    // la funcion dentro del useMemo debe de retornar el valor que se quiere memorizar
+    return getHeroById(heroId);
+  }, [heroId])
+  // lo que esta en [] es la dependencia. Si heroId cambia se volverá a ejecutar la funcion dentro de useMemo
 
   // if (!hero) return <p>No hay heroe</p>
   if (!hero) {
