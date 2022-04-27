@@ -12,9 +12,9 @@ export const Navbar = () => {
 
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-            
-            <Link 
-                className="navbar-brand" 
+
+            <Link
+                className="navbar-brand"
                 to="/"
             >
                 Asociaciones
@@ -23,18 +23,25 @@ export const Navbar = () => {
             <div className="navbar-collapse">
                 <div className="navbar-nav">
 
-                    <NavLink                         
+                    <NavLink
                         className={({ isActive }) => 'nav-item nav-link ' + (isActive ? 'isActive' : '')}
                         to="/marvel"
                     >
                         Marvel
                     </NavLink>
 
-                    <NavLink 
+                    <NavLink
                         className={({ isActive }) => 'nav-item nav-link ' + (isActive ? 'isActive' : '')}
                         to="/dc"
                     >
                         DC
+                    </NavLink>
+
+                    <NavLink
+                        className={({ isActive }) => 'nav-item nav-link ' + (isActive ? 'isActive' : '')}
+                        to="/search"
+                    >
+                        Search
                     </NavLink>
                 </div>
             </div>
@@ -44,8 +51,8 @@ export const Navbar = () => {
                     <span className="nav-item nav-link text-info">
                         Jose
                     </span>
-                    <button 
-                        className="nav-item nav-link btn" 
+                    <button
+                        className="nav-item nav-link btn"
                         onClick={ handleLogout }
                     >
                         Logout
