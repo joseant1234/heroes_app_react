@@ -19,9 +19,11 @@ export const LoginScreen = () => {
     }
     dispatch(action);
 
+    const lastPath = localStorage.getItem('lastPath') || '/marvel';
+
     // con el replace en true reemplaza la historia en lugar de crear una nueva entrada en la historia
     // eso hace que cuando se seleccione la fecla de back no vuelva a la pagina de login porque ahora es una nueva historia
-    navigate('/marvel', {
+    navigate(lastPath, {
       replace: true
     });
   }
