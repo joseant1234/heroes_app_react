@@ -33,7 +33,7 @@ export const LoginScreen = () => {
       <h1>Login</h1>
       <hr/>
       <button
-        class="btn btn-primary"
+        className="btn btn-primary"
         onClick={ handleLogin }
       >
           Login
