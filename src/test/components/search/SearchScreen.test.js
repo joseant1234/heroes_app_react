@@ -1,4 +1,4 @@
-import { SearchScreen } from "../../components/search/SearchScreen"
+import { SearchScreen } from "../../../components/search/SearchScreen"
 import { mount } from 'enzyme';
 import { MemoryRouter } from "react-router-dom";
 
