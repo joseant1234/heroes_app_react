@@ -1,6 +1,12 @@
 import { useMemo } from "react";
 import { useParams, Navigate, useNavigate } from "react-router-dom"
+import { heroImages } from "../../helpers/heroImages";
 import { getHeroById } from "../../selectors/getHeroById";
+// import batman from '../../assets/dc-batman.jpg' // para contenido estatico
+
+// el require.context es de webpack
+// en context se pone la ruta y el siguiente argumento es q busque en subdirectorios
+// const heroImages = require.context('../../assets', true);
 
 export const HeroScreen = () => {
   const { heroId } = useParams();
@@ -38,7 +44,11 @@ export const HeroScreen = () => {
   return (
     <div className="row mt-5">
       <div className="col-4">
-        <img src={imagePath} alt={superhero} className="img-thumbnail animate__animated animate__fadeInLeft"/>
+        <img
+          // src={imagePath} alt={superhero} // desde public/assets
+          // src={batman} // con un import
+          src={heroImages(`./${heroId}.jpg`)}
+          className="img-thumbnail animate__animated animate__fadeInLeft"/>
       </div>
 
       <div className="col-8 animate__animated animate__fadeIn">
